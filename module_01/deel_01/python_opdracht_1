@@ -1,0 +1,2 @@
+naam = 'tobias'
+print (type(naam))
