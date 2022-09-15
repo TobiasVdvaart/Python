@@ -13,7 +13,7 @@ pizza_total_price = pizza_klein_total_price + pizza_medium_total_price + pizza_g
 print (f"""
 U heeft :
 =========================================
-{pizza_klein_amount} Small pizza {pizza_groot_total_price}€)
+{pizza_klein_amount} Small pizza {pizza_klein_total_price}€)
 {pizza_medium_amount} Medium pizza ({pizza_medium_total_price}€)
 {pizza_groot_amount} Large pizza ({pizza_groot_total_price}€)
 ==========================================
