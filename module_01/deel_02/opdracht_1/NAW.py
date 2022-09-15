@@ -1,8 +1,11 @@
-adres = """----------------------------------------------------
-|  Naam      : tobias van der vaart
-|  Adres     : willeminastraat 33
-|  Postcode  : 2991 BT
-|  Woonplaats: Barendrecht
- ----------------------------------------------------"""
+naam = input("Vul uw Voledige naam : ")
+adres = input("Vul uw adress in : ")
+postcode = input("Vul uw postcode in : ")
+woonplaats = input("Vul uw woonplaats in : ")
 
-print(adres)
+print("---------------------------------")
+print(f"|  Naam      : {naam}")
+print(f"|  Adres     : {adres}")
+print(f"|  Postcode  : {postcode}")
+print(f"|  Woonplaats: {woonplaats}")
+print("---------------------------------")
