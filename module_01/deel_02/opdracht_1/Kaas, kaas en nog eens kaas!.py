@@ -26,8 +26,11 @@ if geel == "ja":
 
     if gaten == "ja":
         duur = input("Is de kaas belachelijk duur? ")
+        if duur == "gemiddeld":
+            print ("goudse kaas")
 
-        if duur == "ja":
+
+        elif duur == "ja":
             print("Emmenthaler")
 
         else:
