@@ -53,10 +53,10 @@ if place == 'forrest':
     exit()
 
 ###############CAVE############################
-
+owns_shield = False
+owns_hammer = False
 if place == 'cave':
     print('you are going to the cave  ')
-    owns_hammer = False
 house2 = input('you find a dwarfs house are you going in? yes/no ')
 if house2 == 'yes':
     print ('you entered the dwarfs house')
@@ -67,7 +67,12 @@ if house2 == 'yes':
 if house2 == 'no':
     print ('you ignore the house ')
 print ('you are going further in the mines')
-
+schild = input('you find a shield in the  would you take it? yes/no ')
+if schild == 'yes':
+    owns_shield = True
+    print('you took the shield and put it on youre back')
+else:
+    print('youre ignore the shield and you further in the mines')
 death_pick2 = input('you are becoming tired are you going to sleep? yes/no ')
 if death_pick2 == 'yes':
     print('you where killed in youre sleep')
@@ -76,7 +81,7 @@ elif death_pick2 == 'no':
     print('you didint dont go to sleep and go further in the mine ')
     
 print ('you find the the end boss of the dungeon The Stone demon Golem')
-if  owns_hammer :
+if  owns_hammer and owns_shield :
     print('you killed the demon tree with the elfs dagger')
 else:
     print('you entered the dungeon but you where killed because you didint have the gear for it')
