@@ -1,0 +1,6 @@
+getal1 = 6
+x = True
+
+getal2 == 7
+print (x)
+print (type(x))
