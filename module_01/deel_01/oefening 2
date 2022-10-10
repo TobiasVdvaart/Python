@@ -1,6 +1,11 @@
-getal1 = 6
-x = True
+zin = input('vul een woord in!')
 
-getal2 == 7
-print (x)
-print (type(x))
+zin2 = ' '
+
+for c in (zin):
+
+    zin2 += c      
+
+    zin2 += c
+
+print(zin2)
