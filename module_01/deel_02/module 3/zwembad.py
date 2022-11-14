@@ -5,7 +5,7 @@ vraag1 = float(input("hoelang is de zembad? "))
 vraag2 = float(input("hoe breed is de zwembad? "))
 vraag3 = float(input("hoe diep is de zwembad? "))
 voorrijs_afstand = float(input('hoever woont u?'))
-if 
+
 
 
 

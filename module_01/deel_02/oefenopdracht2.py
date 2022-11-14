@@ -13,7 +13,7 @@ else:
     print('het feest gaat niet door')
 
 
-def getBool(letter: str) bool:
+def getBool(letter: str) :
     print(letter)
     if letter == 'a':
         return True
