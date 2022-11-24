@@ -1,14 +1,12 @@
 
 antwoord = []
-
 for x in range (1, 11):
-    antwoord.append(x * 15)
-
+    antwoord.append(x * 13)
 print (antwoord[12])
 
 
 
-
+x
 #1
 mijn_lijst = [5, 12, 19, 27, 3]
 
@@ -33,4 +31,4 @@ mijn_lijst.pop(0)
 print(mijn_lijst)
 
 #6
-mijn_lijst.insert
+
