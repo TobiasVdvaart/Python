@@ -1,23 +1,25 @@
-welke_dag = input("Kies een dag: ")
-while True:
-    print('maandag')
-    if welke_dag == 'maandag':
+teller = 0
+dag = input("Welke dag van de week?")
+while teller < 7:
+    print("maandag")
+    if dag == "maandag":
         break
-    print('dinsdag')
-    if welke_dag == 'dinsdag':
+    print("dinsdag")
+    if dag == "dinsdag":
         break
-    print('woensdag')
-    if welke_dag == 'woensdag':
+    print("woensdag")
+    if dag == "woensdag":
         break
-    print('donderdag')
-    if welke_dag == 'donderdag':
+    print("donderdag")
+    if dag == "donderdag":
         break
-    print('vrijdag')
-    if welke_dag == 'vrijdag':
+    print("vrijdag")
+    if dag == "vrijdag":
         break
-    print('zaterdag')
-    if welke_dag == 'zaterdag':
+    print("zaterdag")
+    if dag == "za":
         break
-    print('zondag')
-    if welke_dag == 'zondag':
-        break
+    print("zondag")
+    if dag == "zondag":
+        break   
+    teller += 1
