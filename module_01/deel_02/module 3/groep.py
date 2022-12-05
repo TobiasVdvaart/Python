@@ -2,7 +2,7 @@
 antwoord = []
 for x in range (1, 11):
     antwoord.append(x * 13)
-print (antwoord[12])
+print (antwoord)
 
 
 
@@ -25,6 +25,9 @@ namen_lijst = []
 naam = input("voer een naam in of quit, ")
 while naam != "quit":
     namen_lijst.append(naam)
+    input("voer een naam in ")
+if input == "quit":
+    print
 
 #5
 mijn_lijst.pop(0)
