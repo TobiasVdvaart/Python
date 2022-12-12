@@ -18,6 +18,5 @@ totaalkost = kostenuitgraven + kostenafvoer + voorrijs_kosten
 print(f' de inhoud van uw zwembad is:      ${berekening1} ')
 print(f'uw uitgraaf kosten zijn:           ${kostenuitgraven} ')
 print(f'uw afvoer kosten zijn:             ${kostenafvoer} ')
-print(f'uw voorrijs kosten zijn:           ${voorrijs_kosten} ')
 print(f'uw totaal kosten zijn:             ${totaalkost} ')
 
