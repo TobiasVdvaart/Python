@@ -12,7 +12,7 @@ voorrijs_afstand = float(input('hoever woont u?'))
 berekening1 = (vraag1*vraag2*vraag3)
 kostenuitgraven = 25*berekening1
 kostenafvoer = 32.50*berekening1
-totaalkost = kostenuitgraven + kostenafvoer + voorrijs_kosten
+totaalkost = kostenuitgraven + kostenafvoer 
 
 
 print(f' de inhoud van uw zwembad is:      ${berekening1} ')
