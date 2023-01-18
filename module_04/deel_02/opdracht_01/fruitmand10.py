@@ -2,15 +2,12 @@ from fruitmand1 import fruitmand
 from operator import itemgetter
  
 
-gewichten = []
-gesoteerde_fruit = []
 
-# for gewicht in fruitmand:
-#     gewichten.append(gewicht["weight"])
+gewicht = sorted(fruitmand, key=itemgetter('weight'), reverse=True)
 
-# print(sorted(gewichten))
-
-print (sorted(fruitmand, key=itemgetter('name', 'weight')))
-
+for fruitje in gewicht:
+    print(f"fruit: {fruitje['name']}")
+    print(f"gewicht: {fruitje['weight']}")
+    print("")
 
 
