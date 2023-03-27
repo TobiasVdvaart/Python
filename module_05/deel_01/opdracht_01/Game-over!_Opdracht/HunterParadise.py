@@ -1,54 +1,70 @@
 from game_verhaal import *
+import random
+import time
 
-HEALTH_PLAYER = 100
-DEFENSE_PLAYER = 0
-DAMAGE_PLAYER = 5
+player_hp = 100
+player_attack = 25
+player_defense = 0
 
-HEALTH_ENEMY_01 = 50
-DAMAGE_ENEMY_01 = 10
+goblin_hp = 80
+goblin_attack = 20
 
-HEALTH_ENEMY_02 = 70
-DAMAGE_ENEMY_02 = 15
+start_vraag = input("wilt u starten? yes/no ")
 
-HEALTH_ENEMY_03 = 60
-DAMAGE_ENEMY_03 = 20
+if start_vraag == "no":
+    quit()
 
-HEALTH_ENEMY_04 = 80
-DAMAGE_ENEMY_04 = 22
-
-HEALTH_BOSS = 200
-DAMAGE_ENEMY_05 = 50
-def damage_functie_player():
-    print("test")
-
-#STARTING POINT
-print(afbeeldingen[0])
-print(Teksten[0])
-vraag_1 = input(" yes/no, ")
-if vraag_1 == "no":
-    quit
-naam_speler = input("wat is uw naam, ")
-
-
-#STORY
-print(afbeeldingen[1])
-print(Teksten[1])
-print(afbeeldingen[2])
-print(Teksten[2])
-
-#STORY_02
-print(f"mom: {naam_speler} Wake up!" )
-print(f"{naam_speler}: zZZzZZZ")
-print(f"mom: {naam_speler} you need wake up!, its you're big day! you can take you're hunter Exam today! ")
-print(f"{naam_speler}: Yes! im gonna be the greatest of them All!")
-print(f"mom: If you want to be the greatest {naam_speler} you need to be on time! ")
-print(afbeeldingen[3])
-print(Teksten[3])
-print(afbeeldingen[4])
-
-vraag_2 = input("you see some people sitting in a cabin, are you joining them?, yes/no, ")
-
-if vraag_2 == "no":
-    print(Teksten[4])
 else:
-    print
+    naam_speler = input('wat is uw naam ')
+    time.sleep(2)
+    print(Teksten[0])
+    time.sleep(2)
+    while goblin_hp > 0:
+        print(f"Goblin: HP:{goblin_hp} Attack:{goblin_attack}")
+        speler_keuze_1 = input(f"{naam_speler}: HP:{player_hp} Attack:{player_attack} Defense:{player_defense}. Wat gaat u doen: attack/defense ")
+        
+        if speler_keuze_1 == 'attack':
+            goblin_hp = goblin_hp - random.randint(15, 25)
+            time.sleep(1)
+            print(f'de Goblins hp is nu: {goblin_hp}')
+            time.sleep(1)
+            print('de goblin heeft ook aangevallen!')
+            player_hp = player_hp - random.randint(10, 20)
+            time.sleep(0)
+            print(f'je HP is nu:{player_hp}')
+
+        if player_defense == 0:
+            if speler_keuze_1 == 'defense':
+                print('Je heb geen schild!')
+                time.sleep(1)
+                print(f'de Goblins hp is nu: {goblin_hp}')
+                time.sleep(1)
+                print('de goblin heeft ook aangevallen!')
+                player_hp = player_hp - random.randint(10, 20)
+                time.sleep(0)
+                print(f'je HP is nu:{player_hp}')
+
+        if goblin_hp <= 0:
+            player_hp = 100
+            player_hp = player_hp + 30
+            player_attack = player_attack + random.randint(10,20)
+            print("Je bent level Up!")
+            time.sleep(2)
+            print(f'je HP is nu {player_hp}')
+            time.sleep(2)
+            print("FLOOR REWARD")
+            time.sleep(2)
+            print('Fire sword')
+            time.sleep(2)
+            print(f'Je attack is nu {player_attack}')
+            time.sleep(2)
+            print("je heb de 1ste monster verslagen...")
+            time.sleep(3)
+            print("maar wees niet te blij want dit is niet de laaste!")
+            time.sleep(1)
+            goblin_hp = 80
+            goblin_hp = goblin_hp + random.randint(30, 50)
+            goblin_attack = goblin_attack + random.randint(5, 10)	
+            while goblin_hp > 0:
+                print(f"Goblin: HP:{goblin_hp} Attack:{goblin_attack}")
+                speler_keuze_1 = input(f"{naam_speler}: HP:{player_hp} Attack:{player_attack} Defense:{player_defense}. Wat gaat u doen: attack/defense ")
