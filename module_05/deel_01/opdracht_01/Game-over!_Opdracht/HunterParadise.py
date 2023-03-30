@@ -2,6 +2,10 @@ from game_verhaal import *
 import random
 import time
 
+# clobal en lokal verschil uitzoeken
+# import, functies, variablen/constane, flow
+# leren functies scrijfen zonder globale variablen
+
 player_attack = 25
 
 player_defense = 0
@@ -70,7 +74,7 @@ else:
     goblin_hp = goblin_hp + random.randint(30, 50)
     goblin_attack = goblin_attack + random.randint(5, 10)
 
-    gevecht()
+    gevecht(player_hp,goblin_hp)
 
 
 
