@@ -1,4 +1,6 @@
 def my_function():
-  print("Hello Function town!")
+  zin = ("Hello Function town!")
+  return zin 
+mijn_zin = my_function()
 
-my_function() 
+print(mijn_zin)
