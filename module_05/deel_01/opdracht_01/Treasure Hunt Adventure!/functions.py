@@ -1,6 +1,6 @@
 import time
 from termcolor import colored
-from data import JOURNEY_IN_DAYS
+from data import *
 
 ##################### M04.D02.O2 #####################
 
@@ -12,7 +12,7 @@ def silver2gold(amount:int) -> float:
     return amount/5
 
 def copper2gold(amount:int) -> float:
-    return (amount/10)/5
+    return amount/50
 
 def platinum2gold(amount:int) -> float:
     return amount*25
