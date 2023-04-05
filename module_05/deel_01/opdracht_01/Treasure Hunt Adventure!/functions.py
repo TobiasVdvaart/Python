@@ -27,8 +27,8 @@ def getPersonCashInGold(personCash: dict) -> float:
 ##################### M04.D02.O4 #####################
 
 def getJourneyFoodCostsInGold(people:int, horses:int) -> float:
-    totale_eten_gewicht = (people * COST_FOOD_HUMAN_COPPER_PER_DAY + horses * COST_FOOD_HORSE_COPPER_PER_DAY) * JOURNEY_IN_DAYS
-    totale_etens_kosten = totale_eten_gewicht / 1000 * 2  
+    totale_eten = (people * COST_FOOD_HUMAN_COPPER_PER_DAY + horses * COST_FOOD_HORSE_COPPER_PER_DAY) * JOURNEY_IN_DAYS
+    totale_etens_kosten = totale_eten / 1000 * 2  
     return totale_etens_kosten
 
 ##################### M04.D02.O5 #####################
