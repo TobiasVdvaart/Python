@@ -22,24 +22,28 @@ def gevecht(player_hp,goblin_hp):
                 time.sleep(0)
                 print(f'je HP is nu:{player_hp}')
 
-            if player_defense == 0:
+            
                 if speler_keuze_1 == 'defense':
-                    print('Je hebt geen schild!')
-                    time.sleep(1)
-                    print(f'de Goblins hp is nu: {goblin_hp}')
-                    time.sleep(1)
-                    print('de goblin heeft ook aangevallen!')
-                    player_hp = player_hp - random.randint(10, 20)
-                    time.sleep(0)
-                    print(f'je HP is nu:{player_hp}')
-                    gevecht(100,80)
-        return goblin_hp, player_hp
-def level_up():
-    player_hp += random.randint
-    player_attack = random.randint(10, 20)
+                    if player_defense == 0:
+                        print('Je hebt geen schild!')
+                        time.sleep(1)
+                        print(f'de Goblins hp is nu: {goblin_hp}')
+                        time.sleep(1)
+                        print('de goblin heeft ook aangevallen!')
+                        player_hp = player_hp - random.randint(10, 20)
+                        time.sleep(0)
+                        print(f'je HP is nu:{player_hp}')
+                        return goblin_hp, player_hp
+                    else:
+                        print("Je hebt je schild gebruikt!")
+                        print('De goblin heeft aangevallen maar omdat je een schild heb block je een deel van ze aanval!')
+                        player_hp = player_hp - random.randint(10, 20) - player_defense                       
+def level_up(player_hp):
+    player_hp += random.randint(20, 40)
     print("Je bent level Up!")
     time.sleep(2)
     print(f'je HP is nu {player_hp}')
+    return player_hp
      
 
 player_attack = 25
@@ -58,8 +62,9 @@ else:
     time.sleep(2)
     gevecht(100,80)
 
-    player_hp = 100
-    level_up()
+    player_hp = 130
+    player_attack += random.randint(10, 15)
+    level_up(player_hp, player_attack)
     print("FLOOR REWARD")
     time.sleep(2)
     print('Fire sword')
@@ -73,6 +78,7 @@ else:
     goblin_hp = 80
     goblin_hp = goblin_hp + random.randint(30, 50)
     goblin_attack = goblin_attack + random.randint(5, 10)
+    player_defense = player_defense + random.randint(10, 20)
     gevecht(player_hp,goblin_hp)
     level_up(player_hp = 130)
     print("FLOOR REWARD")
