@@ -1,7 +1,7 @@
 #constants
-JOURNEY_IN_DAYS = 10
-COST_FOOD_HUMAN_COPPER_PER_DAY = 4
-COST_FOOD_HORSE_COPPER_PER_DAY = 3
+journey_in_dagen = 10
+kosten_copper_per_day = 4
+kosten_eten_paard_kopper = 3
 
 #data
 mainCharacter = {

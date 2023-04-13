@@ -113,7 +113,7 @@ if startPrepwork:
     chapterNr += 1
     print_chapter(chapterNr, 'THE PREPWORK')
 
-    if JOURNEY_IN_DAYS == 0:
+    if journey_in_dagen == 0:
         if len(mainCharacter['name']) == 0:
             print_colorvars('Ongeduldig als de jonge avonturier werd de reis direct gestart.')
         else:
@@ -135,7 +135,7 @@ if startPrepwork:
             cashInGold = getCashInGoldFromPeople(cashPeople)
 
         journeyFoodCost = getJourneyFoodCostsInGold(len(foodPeople), horses + 1)
-        journeyText     = ifOne(JOURNEY_IN_DAYS, 'dag', 'dagen')
+        journeyText     = ifOne(journey_in_dagen, 'dag', 'dagen')
         print_colorvars('Aan de hand van de schatkaart was te lezen dat de reis {} zou duren.', [journeyText])
         
         if journeyFoodCost != None and journeyFoodCost > 0:
@@ -147,7 +147,7 @@ if startPrepwork:
         if len(investors) > 0:
             leftoverGold    = round(cashInGold - totalCost ,2)
             nightsInInn     = getMaxAmountOfNightsInInn(leftoverGold, len(party), horses + 1)
-            nightsText      = ifOne(JOURNEY_IN_DAYS - 1, 'nacht', 'nachten')
+            nightsText      = ifOne(journey_in_dagen - 1, 'nacht', 'nachten')
 
             if nightsInInn == None:
                 nightsInInn = 0
@@ -174,7 +174,7 @@ if adventureStarted:
 
     if len(mainCharacter['name']) == 0:
         print_colorvars('Maar als onbekende avonturier zonder geld kom je nergens ... ')
-    elif JOURNEY_IN_DAYS == 0:
+    elif journey_in_dagen == 0:
         print_colorvars('Een reis zonder het bestuderen van de kaart bleek toch geen goed idee, ineens zag {} daar weer het beginpunt en kon er opnieuw begonnen worden.', [mainCharacter['name']])
     elif journeyFoodCost == None or journeyFoodCost == 0:
         print_colorvars('Reizen zonder eten doet {} geen goed en hij keerde al snel terug naar huis.', [mainCharacter['name']])
