@@ -17,19 +17,19 @@ def copper2gold(amount:int) -> float:
 def platinum2gold(amount:int) -> float:
     return amount*25
 
-def getPersonCashInGold(personCash: dict) -> float:
+def getPersonCashInGold(cash: dict) -> float:
     goldValue = 0
-    goldValue += personCash.get("copper", 0) / 100.0
-    goldValue += personCash.get("silver", 0) / 10.0
-    goldValue += personCash.get("gold", 0)
-    goldValue += personCash.get("platinum", 0) * 10.0
+    goldValue += cash.get("copper", 0) / 100.0
+    goldValue += cash.get("silver", 0) / 10.0
+    goldValue += cash.get("gold", 0)
+    goldValue += cash.get("platinum", 0) * 10.0
     return goldValue
 ##################### M04.D02.O4 #####################
 
-def getJourneyFoodCostsInGold(people:int, horses:int) -> float:
-    totale_eten = (people * COST_FOOD_HUMAN_COPPER_PER_DAY + horses * COST_FOOD_HORSE_COPPER_PER_DAY) * JOURNEY_IN_DAYS
-    totale_etens_kosten = totale_eten / 1000 * 2  
-    return totale_etens_kosten
+def getJourneyFoodCostsInGold(aantal_mensen, aantal_paarden):
+    totaal_copper = (aantal_mensen * kosten_copper_per_day + aantal_paarden * kosten_eten_paard_kopper) * journey_in_dagen
+    totaal_gold = totaal_copper / 50
+    return totaal_gold
 
 ##################### M04.D02.O5 #####################
 
