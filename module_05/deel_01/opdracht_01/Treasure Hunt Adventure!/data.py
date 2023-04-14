@@ -1,7 +1,7 @@
 #constants
-journey_in_dagen = 10
-kosten_copper_per_day = 4
-kosten_eten_paard_kopper = 3
+JOURNEY_IN_DAYS = 10
+KOSTEN_COPPER_PER_DAG = 4
+KOSTEN_PAARD_COPPER = 3
 
 #data
 mainCharacter = {
@@ -16,8 +16,8 @@ mainCharacter = {
     }
 }
 
-friends = friends = [{
-    'name' : 'Sean',
+friends = [{
+    'name' : 'Jorick',
     'shareWith' : True,
     'adventuring' : True,
     'cash' : {
@@ -27,7 +27,7 @@ friends = friends = [{
         'copper' : 43
     }
 },{
-    'name' : 'Berat',
+    'name' : 'Grommel',
     'shareWith' : True,
     'adventuring' : True,
     'cash' : {
@@ -37,7 +37,7 @@ friends = friends = [{
         'copper' : 8
     }
 },{
-    'name' : 'Marnix',
+    'name' : 'Tristan',
     'shareWith' : False,
     'adventuring' : True,
     'cash' : {
@@ -47,7 +47,7 @@ friends = friends = [{
         'copper' : 11
     }
 },{
-    'name' : 'Ilias',
+    'name' : 'Massimo',
     'shareWith' : True,
     'adventuring' : True,
     'cash' : {
@@ -57,7 +57,7 @@ friends = friends = [{
         'copper' : 3
     }
 },{
-    'name' : 'Yassine',
+    'name' : 'Durbane',
     'shareWith' : True,
     'adventuring' : False,
     'cash' : {
@@ -67,7 +67,7 @@ friends = friends = [{
         'copper' : 11
     }
 },{
-    'name' : 'J.corbijn',
+    'name' : 'Otho',
     'shareWith' : True,
     'adventuring' : True,
     'cash' : {
