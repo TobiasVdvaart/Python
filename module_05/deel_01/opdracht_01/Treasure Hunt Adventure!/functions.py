@@ -3,38 +3,45 @@ from termcolor import colored
 from data import *
 
 ##################### M04.D02.O2 #####################
-
 def copper2silver(amount: int) -> float:
-   return amount/10
-    
+    copper = amount/10
+    return float(copper)
+    pass
 
 def silver2gold(amount:int) -> float:
-    return amount/5
+    silver = amount/5
+    return float(silver)
+    pass
 
 def copper2gold(amount:int) -> float:
-    return amount/50
+    gold = amount/50
+    return float(gold)
+    pass
 
 def platinum2gold(amount:int) -> float:
-    return amount*25
+    platinum = amount*25
+    return float(platinum)
+    pass
 
-def getPersonCashInGold(cash: dict) -> float:
-    goldValue = 0
-    goldValue += cash.get("copper", 0) / 100.0
-    goldValue += cash.get("silver", 0) / 10.0
-    goldValue += cash.get("gold", 0)
-    goldValue += cash.get("platinum", 0) * 10.0
-    return goldValue
+def getPersonCashInGold(personCash:dict) -> float:
+    platinum = personCash['platinum'] * 25
+    gold = personCash['gold']
+    copper = personCash['copper']/50
+    silver = personCash['silver']/5
+    personCash = platinum + gold + copper +silver
+    return personCash
+    pass
 ##################### M04.D02.O4 #####################
 
 def getJourneyFoodCostsInGold(aantal_mensen, aantal_paarden):
-    totaal_copper = (aantal_mensen * kosten_copper_per_day + aantal_paarden * kosten_eten_paard_kopper) * journey_in_dagen
-    totaal_gold = totaal_copper / 50
-    return totaal_gold
+    totaal_copper_prijs = (aantal_mensen * KOSTEN_COPPER_PER_DAG + aantal_paarden * KOSTEN_PAARD_COPPER) * JOURNEY_IN_DAYS
+    totaal_gold_prijs = totaal_copper_prijs / 50
+    return totaal_gold_prijs
 
 ##################### M04.D02.O5 #####################
 
 def getFromListByKeyIs(lst:list, key:str, value:any) -> list:
-    return [dct for dct in lst if dct.get(key) == value]
+    pass
 
 def getAdventuringPeople(people:list) -> list:
     return getFromListByKeyIs(people, "adventuring", True)
@@ -43,9 +50,7 @@ def getShareWithFriends(friends:list) -> list:
     return getFromListByKeyIs(friends, "shareWith", True)
 
 def getAdventuringFriends(friends:list) -> list:
-    adventuring_people = getAdventuringPeople(friends)
-    share_with_friends = getShareWithFriends(friends)
-    return [person for person in adventuring_people if person in share_with_friends]
+    pass
 
 ##################### M04.D02.O6 #####################
 
