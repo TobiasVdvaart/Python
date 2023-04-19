@@ -33,15 +33,19 @@ def getPersonCashInGold(personCash:dict) -> float:
     pass
 ##################### M04.D02.O4 #####################
 
-def getJourneyFoodCostsInGold(aantal_mensen, aantal_paarden):
-    totaal_copper_prijs = (aantal_mensen * KOSTEN_COPPER_PER_DAG + aantal_paarden * KOSTEN_PAARD_COPPER) * JOURNEY_IN_DAYS
+def getJourneyFoodCostsInGold(people, horses):
+    totaal_copper_prijs = (people * KOSTEN_COPPER_PER_DAG + horses * KOSTEN_PAARD_COPPER) * JOURNEY_IN_DAYS
     totaal_gold_prijs = totaal_copper_prijs / 50
     return totaal_gold_prijs
 
 ##################### M04.D02.O5 #####################
 
 def getFromListByKeyIs(lst:list, key:str, value:any) -> list:
-    pass
+    for x in list:
+        if x[key] != True:
+            list.remove(x)
+    return(list)
+getFromListByKeyIs(friends, 'shareWith', True)
 
 def getAdventuringPeople(people:list) -> list:
     return getFromListByKeyIs(people, "adventuring", True)
