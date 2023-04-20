@@ -8,11 +8,12 @@ Niet-werkende code chagerijnig. Programmeren is een avontuur. Ik leer elke dag i
 ALLOWED_IN_WORD = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-"
 
 
+
 def getNumberOfCharacters(text: str) -> int:
-    for letters in text:
-        ALLOWED_IN_WORD_NEW = ALLOWED_IN_WORD.replace('_-', '')
-        return len(ALLOWED_IN_WORD_NEW)
-print  (getNumberOfCharacters(text=ALLOWED_IN_WORD))
+    for words in text:
+        words.replace('_-', '')
+        words = text.isalpha()
+    return words
 
 
 
@@ -25,3 +26,30 @@ def getNumberOfSentences(text: str) -> int:
 def getNumberOfWords(text: str) -> int:
         words = text.split()
         return(len(words))
+
+
+def getNumberOfCharacters(text: str) -> int:
+    aantal = 0
+    return len(text) + aantal
+
+
+# nieuwe zinnen opdracht voor ?, !, .
+def getNumberOfCharacters(text: str) -> int:
+    Karakters = 0
+    for x in text:
+        if x == "!":
+            Karakters += 1
+        if x == "?":
+            Karakters += 1
+        if x == ".":
+            Karakters += 1    
+    return Karakters
+
+
+# oude opdracht
+def getNumberOfCharacters(text: str) -> int:
+    Karakters = 0
+    for x in text:
+        if x.isalpha():
+            Karakters += 1
+    return Karakters

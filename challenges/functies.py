@@ -30,19 +30,44 @@ def getFileContentAsString(textFile: str) -> str:
         content = file.read()
     return content
 
+
+
 # opdracht 1
 def getNumberOfCharacters(text: str) -> int:
-    for text in ALLOWED_IN_WORD:
-        ALLOWED_IN_WORD_NEW = ALLOWED_IN_WORD.replace('_-', '')
-        print (len(ALLOWED_IN_WORD_NEW))
-    return(getNumberOfCharacters(text=ALLOWED_IN_WORD))
+    Karakters = 0
+    for x in text:
+        if x.isalpha():
+            Karakters += 1
+    return Karakters
 
 # opdracht 2
 def getNumberOfSentences(text: str) -> int:
-    counter = text.count(".")
-    return counter
+    aantal_karakters = 0
+    for x in text:
+        if x == "!":
+            aantal_karakters += 1
+        if x == "?":
+            aantal_karakters += 1
+        if x == ".":
+            aantal_karakters += 1    
+    return aantal_karakters
 
 # opdracht 3
 def getNumberOfWords(text: str) -> int:
         words = text.split()
         return(len(words))
+
+# opdracht 5
+def getAVIresults(text: str) -> int:
+        if getNumberOfWords(text) <= 7:
+             return("5")
+        if getNumberOfWords(text) == 8:
+             return("6")
+        if getNumberOfWords(text) <= 9:
+             return("7")
+        if getNumberOfWords(text) <= 10:
+             return("8")
+        if getNumberOfWords(text) <= 11:
+             return("11")
+        if getNumberOfWords(text) > 11:
+             return("12")
