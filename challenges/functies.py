@@ -36,7 +36,7 @@ def getFileContentAsString(textFile: str) -> str:
 def getNumberOfCharacters(text: str) -> int:
     Karakters = 0
     for x in text:
-        if x.isalpha():
+        if x in ALLOWED_IN_WORD:
             Karakters += 1
     return Karakters
 
@@ -46,9 +46,9 @@ def getNumberOfSentences(text: str) -> int:
     for x in text:
         if x == "!":
             aantal_karakters += 1
-        if x == "?":
+        elif x == "?":
             aantal_karakters += 1
-        if x == ".":
+        elif x == ".":
             aantal_karakters += 1    
     return aantal_karakters
 
@@ -59,15 +59,19 @@ def getNumberOfWords(text: str) -> int:
 
 # opdracht 5
 def getAVIresults(text: str) -> int:
-        if getNumberOfWords(text) <= 7:
-             return("5")
-        if getNumberOfWords(text) == 8:
-             return("6")
-        if getNumberOfWords(text) <= 9:
-             return("7")
-        if getNumberOfWords(text) <= 10:
-             return("8")
-        if getNumberOfWords(text) <= 11:
-             return("11")
-        if getNumberOfWords(text) > 11:
-             return("12")
+    punten = 0
+    gemiddeld = getNumberOfWords(text) / getNumberOfSentences(text)
+    if gemiddeld <= 7.4:
+        punten = 5
+    elif gemiddeld > 7.4 and gemiddeld <= 8.4:
+        punten = 6
+    elif gemiddeld > 8.4 and gemiddeld <= 9.4:
+        punten = 7
+    elif gemiddeld > 9.4 and gemiddeld <= 10.4:
+        punten = 8
+    elif gemiddeld > 10.4 and gemiddeld <= 11.4:
+        punten = 11
+    elif gemiddeld > 11:
+        punten = 12
+
+    return punten
