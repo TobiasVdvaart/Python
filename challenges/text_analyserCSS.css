@@ -1,0 +1,30 @@
+textarea {
+  width: 600px;
+  height: 600px;
+  border: 7px solid peachpuff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h1{
+    font-size: 80px;
+    margin-left: 615px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 7px solid rgb(255, 255, 255);
+    position: absolute;
+    color: peachpuff;
+}
+
+body{
+    background-color: royalblue;
+}
+
+button{
+    background-color: peachpuff;
+    font-family: fantasy;
+    position: absolute;
+    font-size: 20px;
+    margin-right: 50px;
+}
