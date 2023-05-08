@@ -41,11 +41,7 @@ def getJourneyFoodCostsInGold(people, horses):
 ##################### M04.D02.O5 #####################
 
 def getFromListByKeyIs(lst:list, key:str, value:any) -> list:
-    for x in list:
-        if x[key] != True:
-            list.remove(x)
-    return(list)
-getFromListByKeyIs(friends, 'shareWith', True)
+    return [x for x in lst if x.get(key) == value]
 
 def getAdventuringPeople(people:list) -> list:
     return getFromListByKeyIs(people, "adventuring", True)
@@ -53,8 +49,10 @@ def getAdventuringPeople(people:list) -> list:
 def getShareWithFriends(friends:list) -> list:
     return getFromListByKeyIs(friends, "shareWith", True)
 
-def getAdventuringFriends(friends:list) -> list:
-    pass
+def getAdventuringFriends(friends:list, people:list) -> list:
+    adventuring_people = getAdventuringPeople(people)
+    share_with_friends = getShareWithFriends(friends)
+    return [x for x in adventuring_people if x in share_with_friends]
 
 ##################### M04.D02.O6 #####################
 
