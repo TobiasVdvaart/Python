@@ -6,22 +6,22 @@ from data import *
 def copper2silver(amount: int) -> float:
     copper = amount/10
     return float(copper)
-    pass
+    
 
 def silver2gold(amount:int) -> float:
     silver = amount/5
     return float(silver)
-    pass
+    
 
 def copper2gold(amount:int) -> float:
     gold = amount/50
     return float(gold)
-    pass
+    
 
 def platinum2gold(amount:int) -> float:
     platinum = amount*25
     return float(platinum)
-    pass
+    
 
 def getPersonCashInGold(personCash:dict) -> float:
     platinum = personCash['platinum'] * 25
@@ -30,11 +30,11 @@ def getPersonCashInGold(personCash:dict) -> float:
     silver = personCash['silver']/5
     personCash = platinum + gold + copper +silver
     return personCash
-    pass
+    
 ##################### M04.D02.O4 #####################
 
 def getJourneyFoodCostsInGold(people, horses):
-    totaal_copper_prijs = (people * KOSTEN_COPPER_PER_DAG + horses * KOSTEN_PAARD_COPPER) * JOURNEY_IN_DAYS
+    totaal_copper_prijs = (people * COST_FOOD_HUMAN_COPPER_PER_DAY + horses * COST_FOOD_HORSE_COPPER_PER_DAY) * JOURNEY_IN_DAYS
     totaal_gold_prijs = totaal_copper_prijs / 50
     return totaal_gold_prijs
 
@@ -57,7 +57,8 @@ def getAdventuringFriends(friends:list, people:list) -> list:
 ##################### M04.D02.O6 #####################
 
 def getNumberOfHorsesNeeded(people:int) -> int:
-    pass
+    for x in range(people):
+        
 
 def getNumberOfTentsNeeded(people:int) -> int:
     pass
