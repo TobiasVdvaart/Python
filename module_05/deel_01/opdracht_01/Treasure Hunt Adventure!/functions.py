@@ -57,15 +57,16 @@ def getAdventuringFriends(friends:list, people:list) -> list:
 
 ##################### M04.D02.O6 #####################
 
-def get_number_of_horses_needed(people: int) -> int:
+def getNumberOfHorsesNeeded(people: int) -> int:
     return math.ceil(people / 2)
 
-def get_number_of_tents_needed(people: int) -> int:
+def getNumberOfTentsNeeded(people: int) -> int:
     return math.ceil(people / 3)
 
-def get_total_rental_cost(horses: int, tents: int) -> float:
+def getNumberOfHorsesNeeded(horses: int, tents: int) -> float:
     total_cost = horses * COST_HORSE_SILVER_PER_DAY * JOURNEY_IN_DAYS + tents * COST_TENT_GOLD_PER_WEEK * math.ceil(JOURNEY_IN_DAYS/7)
     return total_cost
+
 
 ##################### M04.D02.O7 #####################
 
