@@ -1,5 +1,7 @@
 from functions import print_colorvars
-from functions import getNumberOfHorsesNeeded, getNumberOfTentsNeeded, getTotalRentalCost
+from functions import *
+
+print(getTotalRentalCost(1, 2))
 
 if getNumberOfHorsesNeeded(7) != 4:
     print_colorvars(vars=['Test 1 is False'], color='red')
