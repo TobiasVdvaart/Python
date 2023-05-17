@@ -64,16 +64,23 @@ def getNumberOfTentsNeeded(people: int) -> int:
     return math.ceil(people / 3)
 
 def getTotalRentalCost(horses: int, tents: int) -> float:
-    Horse_Berekening = horses * COST_HORSE_SILVER_PER_DAY * JOURNEY_IN_DAYS
-    Tent_Berekening = tents * COST_TENT_GOLD_PER_WEEK * math.ceil(JOURNEY_IN_DAYS/7)
-    total_cost = Horse_Berekening + Tent_Berekening
+    Horse_Berekening = (horses * COST_HORSE_SILVER_PER_DAY) * JOURNEY_IN_DAYS
+    totaal_horse = silver2gold(Horse_Berekening)
+    Tent_Berekening = tents * COST_TENT_GOLD_PER_WEEK * 2
+    total_cost = totaal_horse + Tent_Berekening
     return total_cost
 
 
 ##################### M04.D02.O7 #####################
 
-def getItemsAsText(items:list) -> str:
-    pass
+def getItemsAsText(items: list) -> str:
+    Items_naar_text = []
+    for item in items:
+        item_text = f"{item['amount']}x {item['name']}"
+        if item.get('unit'):
+            item_text += f" ({item['amount']}{item['unit']} {item['name']})"
+        Items_naar_text.append(item_text)
+    return ", ".join(Items_naar_text)
 
 def getItemsValueInGold(items:list) -> float:
     pass
