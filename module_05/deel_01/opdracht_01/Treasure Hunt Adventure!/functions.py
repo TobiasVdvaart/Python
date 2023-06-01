@@ -4,33 +4,31 @@ from data import *
 import math
 
 ##################### M04.D02.O2 #####################
-def copper2silver(amount: int) -> float:
-    copper = amount/10
-    return float(copper)
-    
+def copper2silver(amount:int) -> float:
+    return amount / 10
 
 def silver2gold(amount:int) -> float:
-    silver = amount/5
-    return float(silver)
-    
+    return amount / 5
 
 def copper2gold(amount:int) -> float:
-    gold = amount/50
-    return float(gold)
-    
+    return amount / 50
 
 def platinum2gold(amount:int) -> float:
-    platinum = amount*25
-    return float(platinum)
-    
+    return amount * 25
 
 def getPersonCashInGold(personCash:dict) -> float:
-    platinum = personCash['platinum'] * 25
-    gold = personCash['gold']
-    copper = personCash['copper']/50
-    silver = personCash['silver']/5
-    personCash = platinum + gold + copper +silver
-    return personCash
+    copper = copper2gold(personCash['copper'])
+    silver = silver2gold(personCash['silver'])
+    gold = personCash['gold']   
+    platinum = platinum2gold(personCash['platinum'])
+    totaal = copper + silver + gold + platinum
+    print(copper)
+    print(silver)
+    print(gold)
+    print(platinum)
+    
+    
+    return totaal
     
 ##################### M04.D02.O4 #####################
 
@@ -83,13 +81,13 @@ def getItemsAsText(items: list) -> str:
     return ", ".join(items_as_text)
 
 def getItemsValueInGold(items: list) -> float:
-    total_price = 0
+
     for item in items:
         if 'price' in item and 'amount' in item['price'] and 'type' in item['price']:
             amount = item['price']['amount']
             item_type = item['price']['type']
             total_price += amount
-    return total_price
+    return total_price, item_type
 
 
 
@@ -97,7 +95,14 @@ def getItemsValueInGold(items: list) -> float:
 ##################### M04.D02.O8 #####################
 
 def getCashInGoldFromPeople(people:list) -> float:
-    pass
+    price = 0
+    for y in people:
+        price += platinum2gold(y['cash']['platinum'])
+        price += y['cash']['gold']
+        price += silver2gold(y['cash']['silver'])
+        price += copper2gold(y['cash']['copper'])
+    return price
+
 
 ##################### M04.D02.O9 #####################
 
