@@ -74,16 +74,25 @@ def getTotalRentalCost(horses: int, tents: int) -> float:
 ##################### M04.D02.O7 #####################
 
 def getItemsAsText(items: list) -> str:
-    Items_naar_text = []
+    items_as_text = []
     for item in items:
         item_text = f"{item['amount']}x {item['name']}"
         if item.get('unit'):
             item_text += f" ({item['amount']}{item['unit']} {item['name']})"
-        Items_naar_text.append(item_text)
-    return ", ".join(Items_naar_text)
+        items_as_text.append(item_text)
+    return ", ".join(items_as_text)
 
-def getItemsValueInGold(items:list) -> float:
-    pass
+def getItemsValueInGold(items: list) -> float:
+    total_price = 0
+    for item in items:
+        if 'price' in item and 'amount' in item['price'] and 'type' in item['price']:
+            amount = item['price']['amount']
+            item_type = item['price']['type']
+            total_price += amount
+    return total_price
+
+
+
 
 ##################### M04.D02.O8 #####################
 
