@@ -23,21 +23,20 @@ def gevecht(player_hp,goblin_hp):
                 print(f'je HP is nu:{player_hp}')
 
             
-                if speler_keuze_1 == 'defense':
-                    if player_defense <= 0:
-                        print('Je hebt geen schild!')
-                        time.sleep(1)
-                        print(f'de Goblins hp is nu: {goblin_hp}')
-                        time.sleep(1)
-                        print('de goblin heeft ook aangevallen!')
-                        player_hp = player_hp - random.randint(10, 20)
-                        time.sleep(0)
-                        print(f'je HP is nu:{player_hp}')
-                        return goblin_hp, player_hp
-                    else:
-                        print("Je hebt je schild gebruikt!")
-                        print('De goblin heeft aangevallen maar omdat je een schild heb block je een deel van ze aanval!')
-                        player_hp = player_hp - random.randint(10, 20) - player_defense                       
+            elif speler_keuze_1 == 'defense':
+                if player_defense <= 0:
+                    print('Je hebt geen schild!')
+                    time.sleep(1)
+                    print(f'de Goblins hp is nu: {goblin_hp}')
+                    time.sleep(1)
+                    print('de goblin heeft ook aangevallen!')
+                    player_hp = player_hp - random.randint(10, 20)
+                    time.sleep(0)
+                    print(f'je HP is nu:{player_hp}')
+                else:
+                    print("Je hebt je schild gebruikt!")
+                    print('De goblin heeft aangevallen maar omdat je een schild heb block je een deel van ze aanval!')
+                    player_hp = player_hp - random.randint(10, 20) - player_defense                       
 def level_up(player_hp):
     player_hp += random.randint(20, 40)
     print("Je bent level Up!")

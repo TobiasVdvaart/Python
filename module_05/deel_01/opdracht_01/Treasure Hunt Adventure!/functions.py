@@ -110,7 +110,7 @@ def getInterestingInvestors(investors:list) -> list:
     pass
 
 def getAdventuringInvestors(investors:list) -> list:
-    pass
+     return getFromListByKeyIs(investors, "adventuring", True)
 
 def getTotalInvestorsCosts(investors:list, gear:list) -> float:
     pass

@@ -6,3 +6,11 @@
 #   ######################################################################### # built in functies ######################################################################### # 
 # type casting #  als je iets bijvoorbeeld een integer een string wilt maken doe je print (str (aantal) aantal staat voor dat je het wilt veranderen. + ' ' + .....  # >>>
 #  print(str(aantal) + ' ' + omschrijving + ' ' + str(stuksprijs)) 3 # Croky naturel 300gr 0.89
+
+
+def Mijn_funtie(hallo:str):
+    print(hallo)
+    return 6
+
+print(Mijn_funtie("ik ben tobias"))
+
