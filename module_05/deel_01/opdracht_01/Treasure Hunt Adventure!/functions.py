@@ -62,10 +62,10 @@ def getNumberOfTentsNeeded(people: int) -> int:
     return math.ceil(people / 3)
 
 def getTotalRentalCost(horses: int, tents: int) -> float:
-    Horse_Berekening = (horses * COST_HORSE_SILVER_PER_DAY) * JOURNEY_IN_DAYS
-    totaal_horse = silver2gold(Horse_Berekening)
-    Tent_Berekening = tents * COST_TENT_GOLD_PER_WEEK * 2
-    total_cost = totaal_horse + Tent_Berekening
+    Horse_totale_berekening = (horses * COST_HORSE_SILVER_PER_DAY) * JOURNEY_IN_DAYS
+    totaal_horse = silver2gold(Horse_totale_berekening)
+    Tent_totale_berekening = tents * COST_TENT_GOLD_PER_WEEK * 2
+    total_cost = totaal_horse + Tent_totale_berekening
     return total_cost
 
 
@@ -107,13 +107,44 @@ def getCashInGoldFromPeople(people:list) -> float:
 ##################### M04.D02.O9 #####################
 
 def getInterestingInvestors(investors:list) -> list:
-    pass
+    intresting_inverstors = []
+    
+    for x in investors:
+        if x['profitReturn'] <= 10:
+            intresting_inverstors.append(x)
+    return intresting_inverstors
+
 
 def getAdventuringInvestors(investors:list) -> list:
-     return getFromListByKeyIs(investors, "adventuring", True)
+    real_investors = getInterestingInvestors(investors)
+    real_intresting_inverstors = getAdventuringPeople(real_investors)
+    return real_intresting_inverstors
+
 
 def getTotalInvestorsCosts(investors:list, gear:list) -> float:
-    pass
+    resultaat = getAdventuringInvestors(investors)
+    total_cost_inverstors = (JOURNEY_IN_DAYS * copper2gold(COST_FOOD_HUMAN_COPPER_PER_DAY)) + (JOURNEY_IN_DAYS * copper2gold        (COST_FOOD_HORSE_COPPER_PER_DAY)) + (JOURNEY_IN_DAYS * silver2gold(COST_HORSE_SILVER_PER_DAY)) + (2 * COST_TENT_GOLD_PER_WEEK )   
+    Total_cost = total_cost_inverstors * len(resultaat)
+    total_cost_gear = 0
+
+    for y in resultaat:
+        for x in gear:
+            totale_berekening = x['amount'] * x['price']['amount']
+            if x['price']['type'] == 'gold':
+                total_cost_gear += totale_berekening
+            if x['price']['type'] == 'copper':
+                total_cost_gear += copper2gold(totale_berekening)
+            if x['price']['type'] == 'silver':
+                total_cost_gear += silver2gold(totale_berekening)
+            if x['price']['type'] == 'platinum':
+                total_cost_gear += platinum2gold(totale_berekening)
+
+
+    Total_cost += total_cost_gear
+    
+    return Total_cost
+
+
 
 ##################### M04.D02.O10 #####################
 
