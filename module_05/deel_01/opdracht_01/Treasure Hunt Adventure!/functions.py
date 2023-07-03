@@ -141,18 +141,21 @@ def getTotalInvestorsCosts(investors:list, gear:list) -> float:
 
 
     Total_cost += total_cost_gear
-    
+    print(Total_cost)
     return Total_cost
 
 
 
 ##################### M04.D02.O10 #####################
 
-def getMaxAmountOfNightsInInn(leftoverGold:float, people:int, horses:int) -> int:
-    pass
+def getMaxAmountOfNightsInInn(leftoverGold: float, people: int, horses: int) -> int:
+    nights_for_people = leftoverGold // COST_INN_HUMAN_SILVER_PER_NIGHT
+    nights_for_horses = (leftoverGold % COST_INN_HUMAN_SILVER_PER_NIGHT) // COST_INN_HORSE_COPPER_PER_NIGHT
+    return min(nights_for_people, nights_for_horses)
 
-def getJourneyInnCostsInGold(nightsInInn:int, people:int, horses:int) -> float:
-    pass
+def getJourneyInnCostsInGold(nightsInInn: int, people: int, horses: int) -> float:
+    total_cost = (nightsInInn * COST_INN_HUMAN_SILVER_PER_NIGHT) + (nightsInInn * COST_INN_HORSE_COPPER_PER_NIGHT) / 100
+    return round(total_cost, 2)
 
 ##################### M04.D02.O12 #####################
 
